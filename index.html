@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Undangan Talita</title>
+
+<style>
+body{
+    font-family:Arial,sans-serif;
+    text-align:center;
+    margin:0;
+    background:#ffe4ec;
+}
+
+#cover{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+
+button{
+    padding:15px 30px;
+    border:none;
+    border-radius:30px;
+    font-size:18px;
+}
+
+#isi{
+    display:none;
+    padding:30px;
+}
+</style>
+</head>
+
+<body>
+
+<div id="cover">
+    <h3>Undangan Ulang Tahun</h3>
+    <h1>🎂 Talita 🎂</h1>
+    <button onclick="buka()">OPEN INVITATION</button>
+</div>
+
+<div id="isi">
+    <h1>Selamat Datang</h1>
+    <h2>Ulang Tahun Talita</h2>
+    <p>Terima kasih telah membuka undangan ini.</p>
+</div>
+
+<script>
+function buka(){
+    document.getElementById("cover").style.display="none";
+    document.getElementById("isi").style.display="block";
+}
+</script>
+
+</body>
+</html>
