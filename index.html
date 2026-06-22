@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Ulang Tahun Talita</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+
+<style>
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:#fff0f5;
+text-align:center;
+}
+
+#cover{
+height:100vh;
+background:url('talita.jpg') center center/cover;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.overlay{
+background:rgba(0,0,0,0.55);
+padding:30px;
+border-radius:20px;
+color:white;
+}
+
+.nama{
+font-family:'Great Vibes',cursive;
+font-size:70px;
+color:#ffd6eb;
+}
+
+button{
+padding:14px 28px;
+border:none;
+border-radius:30px;
+margin:10px;
+font-size:16px;
+cursor:pointer;
+}
+
+.buka{
+background:#ff69b4;
+color:white;
+}
+
+.hadir{
+background:#25D366;
+color:white;
+}
+
+.tidak{
+background:#ff4d6d;
+color:white;
+}
+
+#isi{
+display:none;
+padding:20px;
+}
+
+.foto{
+width:220px;
+height:220px;
+object-fit:cover;
+border-radius:50%;
+border:5px solid pink;
+}
+
+.card{
+background:white;
+max-width:500px;
+margin:auto;
+padding:20px;
+border-radius:20px;
+box-shadow:0 0 10px rgba(0,0,0,.1);
+margin-top:20px;
+}
+
+input{
+width:80%;
+padding:12px;
+border-radius:10px;
+border:1px solid #ccc;
+margin-top:10px;
+}
+</style>
+</head>
+
+<body>
+
+<div id="cover">
+<div class="overlay">
+<h3>Birthday Invitation</h3>
+<div class="nama">Talita</div>
+<p>Ulang Tahun Ke-11</p>
+
+<button class="buka" onclick="bukaUndangan()">
+OPEN INVITATION
+</button>
+</div>
+</div>
+
+<div id="isi">
+
+<img src="talita.jpg" class="foto">
+
+<h1>🎂 Talita 11 Tahun 🎂</h1>
+
+<div class="card">
+<p><b>📅 Tanggal</b><br>26 Juni 2026</p>
+<p><b>🕒 Waktu</b><br>15.00 WIB - Selesai</p>
+<p><b>📍 Lokasi</b><br>Babadan, Wlingi</p>
+</div>
+
+<div class="card">
+<h3>Konfirmasi Kehadiran</h3>
+
+<input
+type="text"
+id="nama"
+placeholder="Masukkan nama Anda">
+
+<br><br>
+
+<button class="hadir" onclick="hadir()">
+✅ Saya Akan Hadir
+</button>
+
+<button class="tidak" onclick="tidakHadir()">
+❌ Tidak Bisa Hadir
+</button>
+
+</div>
+
+</div>
+
+<script>
+
+function bukaUndangan(){
+document.getElementById("cover").style.display="none";
+document.getElementById("isi").style.display="block";
+}
+
+function hadir(){
+var nama=document.getElementById("nama").value;
+
+if(nama==""){
+alert("Silakan isi nama terlebih dahulu");
+return;
+}
+
+var pesan="Halo Talita, saya "+nama+" akan hadir di ulang tahunmu.";
+window.open(
+"https://wa.me/6282131458291?text="+encodeURIComponent(pesan)
+);
+}
+
+function tidakHadir(){
+var nama=document.getElementById("nama").value;
+
+if(nama==""){
+alert("Silakan isi nama terlebih dahulu");
+return;
+}
+
+var pesan="Halo Talita, saya "+nama+" mohon maaf tidak bisa hadir.";
+window.open(
+"https://wa.me/6282131458291?text="+encodeURIComponent(pesan)
+);
+}
+
+</script>
+
+</body>
+</html>
