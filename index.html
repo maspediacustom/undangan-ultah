@@ -1,0 +1,168 @@
+<!DOCTYPE html><html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Undangan Ultah Talita</title><link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet"><style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:Arial,sans-serif;
+background:#fff0f5;
+text-align:center;
+}
+
+#cover{
+height:100vh;
+background:url('talita.jpg') center center/cover;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.overlay{
+background:rgba(0,0,0,0.5);
+padding:30px;
+border-radius:20px;
+color:white;
+width:90%;
+max-width:500px;
+}
+
+.nama{
+font-family:'Great Vibes',cursive;
+font-size:75px;
+color:#ffd6eb;
+margin:10px 0;
+}
+
+.buka{
+background:#ff4fb3;
+color:white;
+border:none;
+padding:15px 35px;
+border-radius:30px;
+font-size:18px;
+margin-top:15px;
+cursor:pointer;
+}
+
+#isi{
+display:none;
+padding:20px;
+}
+
+.foto{
+width:220px;
+height:220px;
+border-radius:50%;
+object-fit:cover;
+border:6px solid pink;
+}
+
+.card{
+background:white;
+padding:20px;
+border-radius:20px;
+max-width:500px;
+margin:20px auto;
+box-shadow:0 0 10px rgba(0,0,0,.1);
+}
+
+input{
+width:90%;
+padding:12px;
+border-radius:10px;
+border:1px solid #ccc;
+font-size:16px;
+}
+
+.hadir{
+background:#25D366;
+color:white;
+border:none;
+padding:12px 20px;
+border-radius:10px;
+margin:10px;
+}
+
+.tidak{
+background:#ff4d6d;
+color:white;
+border:none;
+padding:12px 20px;
+border-radius:10px;
+margin:10px;
+}
+</style></head><body><audio id="musik" loop>
+<source src="musik.mp3" type="audio/mpeg">
+</audio><div id="cover">
+<div class="overlay"><h2>🎂 UNDANGAN ULTAH TALITA 🎂</h2><div class="nama">
+Talita
+</div><p>Ulang Tahun Ke-11</p><button class="buka" onclick="bukaUndangan()">
+OPEN INVITATION
+</button></div>
+</div><div id="isi"><img src="talita.jpg" class="foto"><h1>🎉 Talita 11 Tahun 🎉</h1><div class="card">
+<h3>Detail Acara</h3>
+<br>
+<p>📅 26 Juni 2026</p>
+<br>
+<p>🕒 15.00 WIB - Selesai</p>
+<br>
+<p>📍 Babadan, Wlingi</p>
+</div><div class="card">
+<h3>Konfirmasi Kehadiran</h3>
+<br><input type="text" id="nama" placeholder="Masukkan Nama Anda"><br><br>
+
+<button class="hadir" onclick="hadir()">
+✅ Saya Akan Hadir
+</button><button class="tidak" onclick="tidakHadir()">
+❌ Tidak Bisa Hadir
+</button></div></div><script>
+
+function bukaUndangan(){
+document.getElementById("cover").style.display="none";
+document.getElementById("isi").style.display="block";
+
+var musik=document.getElementById("musik");
+musik.play();
+}
+
+function hadir(){
+
+var nama=document.getElementById("nama").value;
+
+if(nama==""){
+alert("Masukkan nama terlebih dahulu");
+return;
+}
+
+var pesan="Halo Talita, saya "+nama+" akan hadir di ulang tahunmu.";
+
+window.open(
+"https://wa.me/6282131458291?text="+encodeURIComponent(pesan),
+"_blank"
+);
+}
+
+function tidakHadir(){
+
+var nama=document.getElementById("nama").value;
+
+if(nama==""){
+alert("Masukkan nama terlebih dahulu");
+return;
+}
+
+var pesan="Halo Talita, saya "+nama+" mohon maaf tidak bisa hadir.";
+
+window.open(
+"https://wa.me/6282131458291?text="+encodeURIComponent(pesan),
+"_blank"
+);
+}
+
+</script></body>
+</html>
